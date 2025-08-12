@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Mobile First Approach -->
+    <!-- Whatever CSS I'm writting - will apply to Mobiles -->
+    <style>
+
+        .square{
+            position: relative;
+            top:600px;
+            height: 100px;
+            width: 100px;
+            background-color: rgb(19, 19, 247);
+            border-radius: 50%;
+            animation-name: jumping_ball;
+            animation-duration: 3s;
+            animation-delay: 0.25s;
+            animation-timing-function: cubic-bezier(0, 0.79, 0.45, 0.98)
+            animation-iteration-count: infinite;
+            /* animation-fill-mode: backwards; */
+            animation-direction: alternate-reverse;
+        }
+
+
+        @keyframes jumping_ball {
+            from{
+                border-radius: 50%;
+            }
+
+            to{
+                    background-color: rgb(192, 40, 106);
+                    transform: translateY(-500px);
+            }
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <h2>Play Area </h2>
+
+    <div class="square">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Mobile First Approach -->
+    <!-- Whatever CSS I'm writting - will apply to Mobiles -->
+    <style>
+
+        .square{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(19, 19, 247);
+            border-radius: 50%;
+            animation-name: somename;
+            animation-duration: 3s;
+            animation-delay: 0.25s;
+            animation-timing-function: cubic-bezier(0, 0, 0.02, 0.99);
+            animation-iteration-count: 1;
+            animation-fill-mode: backwards;
+            animation-direction: reverse;
+            animation-play-state: running; /*generally use with javascript - if not learn yet - kindly avaoid*/
+
+        }
+
+        .square:hover{
+            /*Transform - helps to change a state of an object - so it can be moving an object, rotating, or chaing an entire shape*/
+            /*transform: translateX(500px);*/ /*here 2 means - 2 times i.e. 2 * original_size*/
+            
+            /*Transition - helps to control the behvior while changing the state i.e. when element's state changes from one state to second state*/
+            /* transition-property: all;
+            transition-delay: 1s;
+            transition-duration: 3s;
+            transition-timing-function: cubic-bezier(0, 0, 0.02, 0.99); */
+            /* animation-name: somename;
+            animation-duration: 3s;
+            animation-delay: 0.25s;
+            animation-timing-function: cubic-bezier(0, 0, 0.02, 0.99);
+            animation-iteration-count: 1; */
+
+        }
+
+        @keyframes somename {
+            from{
+                border-radius: 50%;
+            }
+
+            to{
+                    background-color: rgb(192, 40, 106);
+                    transform: translateX(500px);
+                    border-radius: 0%;
+            }
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <h2>Play Area </h2>
+
+    <div id="square" class="square">
+
+    </div>
+
+    <button id="pause_btn">Pause</button>
+
+    <button id="play_btn">play</button>
+
+    <script>
+        pause_btn = document.getElementById('pause_btn');
+        play_btn = document.getElementById('play_btn');
+        square_div = document.getElementById('square');
+
+        pause_btn.addEventListener('click', function(){
+            square_div.style.animationPlayState='paused';
+        })
+
+        play_btn.addEventListener('click', function(){
+            square_div.style.animationPlayState='running';
+        })
+    </script>
+</body>
+</html>
